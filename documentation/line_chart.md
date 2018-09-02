@@ -10,8 +10,8 @@ import LineChart from 'way/to/path/charts/LineChart';
 required props:
  - data
   - type: array of literal objects, with variebles:
-     - 'color':String,
-     - 'value':Number, 
+     - 'x':Number,
+     - 'y':Number, 
 - labelX
   - type: string
   - value: the name of the x labe
