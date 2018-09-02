@@ -2,7 +2,7 @@
 
 ### Import the component
 ```js
-import BarChart from 'way/to/path/charts/LineChart';
+import LineChart from 'way/to/path/charts/LineChart';
 ```
 
 ### Create the Component
