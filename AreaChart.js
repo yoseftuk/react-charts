@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class LineChart extends Component {
+export default class AreaChart extends Component {
 
     constructor(props){
         super(props);
@@ -59,6 +59,7 @@ export default class LineChart extends Component {
         this.ctx.textAlign = 'center';
         this.ctx.strokeWidth = 4;
 
+        this.ctx.moveTo(0,this.canvas.height);
         for(let i=0; i<this.data.length; i++){
 
             //get the values
@@ -76,7 +77,14 @@ export default class LineChart extends Component {
             this.data[i].offsetX = offsetX;
             this.data[i].offsetY = offsetY;
         }
+
+        //fill the area of the chart
+        this.ctx.globalAlpha = this.props.areaOpacity || 0.3;
+        this.ctx.lineTo(this.canvas.width, this.canvas.height);
+        this.ctx.fill();
+
         this.ctx.closePath();
+        this.ctx.globalAlpha = 1;
 
         //draw the circle
         for(let i=0; i<this.data.length;i++) {
@@ -87,7 +95,6 @@ export default class LineChart extends Component {
         }
 
         //draw the labels
-        let realMaxY = this.maxValueY/9*10;
         let xInterval = this.maxValueX/10;
         let yInterval = (this.maxValueY-this.minValueY)/9;
         let startXLabel = this.data[0].x;
