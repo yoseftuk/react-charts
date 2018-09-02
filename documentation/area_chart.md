@@ -21,14 +21,8 @@ required props:
 
 example:
 ```jsx
-<LineChart data={[
-               {color: '#f1623d', value: 25}, 
-               {color: '#497eff', value: 90}, 
-               {color: '#ffdf5b', value: 45}, 
-               {color: '#5edb71', value: 22}
-            ]
-            labelX={'age'} labelY={'experiance'}
-            }/>
+       <AreaChart color={'#ff9944'} labelX={'age'} labelY={'years experience'}
+                  data={[{x: 37, y: 22}, {x: 46, y: 83}, {x: 50, y: 72}, {x: 62, y: 80}, {x: 70, y: 66}, {x: 97,y: 43}]}/>
 ```
 
 ### Costumisation props
